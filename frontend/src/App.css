@@ -1,0 +1,395 @@
+/* frontend/src/App.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --primary-color: #4CAF50; /* Green */
+  --secondary-color: #2196F3; /* Blue */
+  --accent-color: #FFC107; /* Amber */
+  --text-color: #333;
+  --bg-color: #f4f7f6;
+  --card-bg: #ffffff;
+  --border-color: #e0e0e0;
+  --shadow-light: rgba(0, 0, 0, 0.05);
+  --shadow-medium: rgba(0, 0, 0, 0.1);
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-header {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 2px 4px var(--shadow-medium);
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.app-header h1 {
+  margin: 0 0 10px 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.main-nav {
+  display: flex;
+  gap: 20px;
+}
+
+.main-nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.main-nav a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.app-main {
+  flex-grow: 1;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 20px auto;
+  background-color: var(--card-bg);
+  border-radius: 15px;
+  box-shadow: 0 4px 10px var(--shadow-medium);
+}
+
+.app-footer {
+  background-color: var(--text-color);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.page-container {
+  padding: 20px;
+}
+
+h2, h3 {
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+/* Forms */
+.creation-form, .uploader-form {
+  background-color: var(--card-bg);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px var(--shadow-light);
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.creation-form label, .uploader-form label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.creation-form input[type="text"],
+.creation-form textarea,
+.uploader-form input[type="file"] {
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  margin-top: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.creation-form input[type="text"]:focus,
+.creation-form textarea:focus,
+.uploader-form input[type="file"]:focus {
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.2);
+  outline: none;
+}
+
+.creation-form textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.creation-form button, .uploader-form button, .download-csv-button {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  align-self: flex-start; /* Align button to start */
+}
+
+.creation-form button:hover, .uploader-form button:hover, .download-csv-button:hover {
+  background-color: #43A047; /* Darker green */
+  transform: translateY(-2px);
+}
+
+.creation-form button:disabled, .uploader-form button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Role List */
+.role-list-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.role-card {
+  background-color: var(--card-bg);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px var(--shadow-light);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.role-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px var(--shadow-medium);
+}
+
+.role-card h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: var(--secondary-color);
+  font-size: 1.5rem;
+}
+
+.role-card .role-date {
+  font-size: 0.9rem;
+  color: #777;
+  margin-bottom: 15px;
+}
+
+.view-details-link {
+  display: inline-block;
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.view-details-link:hover {
+  background-color: #1976D2; /* Darker blue */
+}
+
+/* Role Details */
+.role-details-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.role-info-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.details-card {
+  background-color: var(--card-bg);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px var(--shadow-light);
+}
+
+.details-card h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: var(--primary-color);
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 10px;
+}
+
+.pre-formatted {
+  background-color: #f9f9f9;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 15px;
+  white-space: pre-wrap; /* Preserve whitespace and wrap text */
+  word-wrap: break-word; /* Break long words */
+  font-family: 'Inter', sans-serif; /* Keep consistent font */
+  font-size: 0.95rem;
+  color: #555;
+  max-height: 400px; /* Limit height for long JDs/rubrics */
+  overflow-y: auto; /* Add scroll if content exceeds max-height */
+}
+
+/* Resume Management Section */
+.resume-management-section {
+  margin-top: 30px;
+}
+
+/* Results Table */
+.results-table-container {
+  margin-top: 30px;
+  background-color: var(--card-bg);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px var(--shadow-light);
+}
+
+.results-table-container h3 {
+  margin-top: 0;
+  color: var(--primary-color);
+}
+
+.table-wrapper {
+  overflow-x: auto; /* Allows horizontal scrolling for wide tables */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table th, table td {
+  border: 1px solid var(--border-color);
+  padding: 12px 15px;
+  text-align: left;
+}
+
+table th {
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+table tr:hover {
+  background-color: #f0f0f0;
+}
+
+.view-details-button {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.view-details-button:hover {
+  background-color: #1976D2;
+}
+
+.download-csv-button {
+  margin-bottom: 15px;
+}
+
+/* Messages */
+.loading-message, .error-message, .no-data-message, .form-description {
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.loading-message {
+  background-color: #e3f2fd; /* Light blue */
+  color: #1565c0; /* Darker blue */
+}
+
+.error-message {
+  background-color: #ffebee; /* Light red */
+  color: #c62828; /* Darker red */
+}
+
+.no-data-message {
+  background-color: #fffde7; /* Light yellow */
+  color: #fbc02d; /* Darker yellow */
+}
+
+.form-description {
+  background-color: #e8f5e9; /* Light green */
+  color: #2e7d32; /* Darker green */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .app-header {
+    padding: 1rem;
+  }
+
+  .app-header h1 {
+    font-size: 2rem;
+  }
+
+  .main-nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .app-main {
+    padding: 1rem;
+    margin: 10px auto;
+  }
+
+  .creation-form, .uploader-form, .results-table-container, .details-card {
+    padding: 20px;
+  }
+
+  .role-list-grid {
+    grid-template-columns: 1fr; /* Stack cards on small screens */
+  }
+
+  table th, table td {
+    padding: 8px 10px;
+    font-size: 0.85rem;
+  }
+
+  .creation-form button, .uploader-form button, .download-csv-button {
+    width: 100%; /* Full width buttons on small screens */
+    text-align: center;
+  }
+}
